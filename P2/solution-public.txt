@@ -1,0 +1,59 @@
+>>>>>>>>>Query0>>>>>>>>>>
+800 friends with month of birth information
+82 friends in month of 5(most)
+[Arwen THOMAS(11), Agrael THOMPSON(26), Aragorn THOMAS(28), Galadriel JONES(29), Velaria MARTINEZ(32), Sarah WILSON(33), Gimli MILLER(39), Brianna JACKSON(40), Saruman ANDERSON(45), Galadriel WILSON(54), Denethor MOORE(56), Raelag TAYLOR(59), Pippin JOHNSON(60), Velaria ANDERSON(66), Zehir WHITE(73), Frodo MILLER(74), Raelag WHITE(81), Gimli MARTINEZ(98), Brianna WHITE(118), Ashley MOORE(141), Elrond MARTIN(151), Meriadoc WILSON(161), Arwen ANDERSON(162), Kujin SMITH(173), Brianna TAYLOR(196), Denethor HARRIS(198), Lily JOHNSON(203), Legolas JOHNSON(226), Raelag WILLIAMS(230), Arwen DAVIS(235), Galadriel DAVIS(243), Ylthin MARTIN(264), Ornella WILLIAMS(285), Aragorn THOMAS(302), Faramir WHITE(311), Raelag GARCIA(331), Sarah MILLER(335), Ylthin SMITH(339), Ylthin MOORE(341), Gandalf JONES(350), Eowyn DAVIS(351), Wulfstan WILLIAMS(365), Raelag MOORE(368), Arwen JACKSON(411), Brianna GARCIA(412), Brianna WILLIAMS(414), Agrael JACKSON(429), Saruman MOORE(437), Theoden BROWN(466), Arantir WHITE(467), Ylaya WHITE(474), Brianna JACKSON(475), Aragorn MILLER(476), Saruman DAVIS(496), Zehir THOMAS(514), Cyrus DAVIS(516), Ella WILLIAMS(519), Agrael BROWN(521), Galadriel GARCIA(523), Kujin THOMPSON(524), Velaria SMITH(527), Agrael THOMPSON(549), Boromir JONES(550), Zehir JACKSON(564), Lily MILLER(568), Ornella MOORE(598), Gandalf ANDERSON(614), Ornella MARTIN(635), Ornella WILSON(670), Ella ANDERSON(679), Velaria MILLER(686), Sauron JACKSON(690), Saruman HARRIS(697), Elrond MOORE(721), Biara MARTIN(731), Brianna MOORE(737), Grace SMITH(745), Galadriel DAVIS(746), Shadya BROWN(753), Gimli SMITH(761), Boromir JONES(770), Gotai WILLIAMS(790)]
+52 friends in month of 4(least)
+[Galadriel MOORE(25), Cyrus WILSON(43), Frodo MARTIN(58), Ylaya MARTINEZ(63), Isabel MARTINEZ(69), Pippin MOORE(71), Gandalf WILSON(121), Kujin THOMAS(138), Lily MOORE(150), Eowyn THOMAS(156), Cyrus ANDERSON(159), Lily MARTINEZ(163), Freyda TAYLOR(190), Meriadoc WILLIAMS(213), Legolas BROWN(222), Agrael MARTIN(234), Lily ANDERSON(245), Ella JOHNSON(258), Legolas JOHNSON(261), Zehir DAVIS(274), Freyda JOHNSON(315), Velaria JOHNSON(323), Cyrus JACKSON(330), Gimli ANDERSON(343), Ashley HARRIS(346), Ashley WHITE(359), Lily HARRIS(373), Galadriel GARCIA(449), Galadriel WILSON(450), Ylthin JACKSON(461), Sauron JOHNSON(485), Legolas WILSON(546), Grace MOORE(583), Saruman MARTINEZ(593), Shadya GARCIA(609), Eowyn MARTIN(620), Eowyn MARTINEZ(624), Gotai WHITE(643), Arwen THOMAS(656), Ylthin JACKSON(668), Velaria THOMPSON(669), Sarah WILSON(678), Ashley ANDERSON(688), Aragorn JONES(691), Ashley WILSON(704), Biara HARRIS(708), Shadya SMITH(742), Frodo MARTINEZ(744), Hangvul DAVIS(766), Arwen THOMPSON(768), Arantir MARTINEZ(777), Gandalf BROWN(787)]
+>>>>>>>>>Query1>>>>>>>>>>
+Longest last names are [ANDERSON, MARTINEZ, THOMPSON, WILLIAMS]
+Shortest last names are [BROWN, DAVIS, JONES, MOORE, SMITH, WHITE]
+Most common last names are [MOORE] - having 60 users for each
+>>>>>>>>>Query2>>>>>>>>>>
+Number of lonely friends: 0
+Lonely friends are []
+>>>>>>>>>Query3>>>>>>>>>>
+Number of friends who live at home: 53
+These friends still live at home [Arantir GARCIA(0), Gandalf JACKSON(14), Sarah ANDERSON(36), Faramir MILLER(44), Aragorn BROWN(49), Raelag THOMAS(61), Ylaya MARTINEZ(63), Freyda JOHNSON(70), Boromir THOMPSON(109), Saruman JONES(115), Freyda BROWN(130), Sarah MILLER(154), Pippin WILLIAMS(165), Ornella WHITE(193), Pippin TAYLOR(219), Legolas TAYLOR(237), Galadriel THOMAS(251), Raelag MOORE(254), Saruman DAVIS(272), Biara MARTIN(279), Meriadoc TAYLOR(288), Frodo MILLER(307), Wulfstan GARCIA(308), Cyrus JACKSON(330), Frodo MILLER(353), Lily DAVIS(391), Elrond JONES(400), Zehir SMITH(433), Grace THOMAS(435), Boromir HARRIS(494), Sauron MILLER(498), Faramir WHITE(499), Gandalf JONES(503), Ylthin HARRIS(525), Freyda HARRIS(535), Aragorn MOORE(538), Ornella WILSON(543), Kujin BROWN(547), Boromir JONES(550), Raelag JOHNSON(552), Biara JACKSON(555), Shadya DAVIS(613), Arantir WHITE(619), Gotai JOHNSON(626), Agrael JONES(637), Ashley THOMPSON(659), Galadriel MOORE(719), Meriadoc THOMAS(747), Sarah BROWN(762), Cyrus BROWN(765), Frodo THOMAS(794), Aragorn HARRIS(798), Ornella GARCIA(799)]
+>>>>>>>>>Query4>>>>>>>>>>
+The following are top 5 photos with the most tags
+(ID 1014) from album Enemies url(link)
+4 Tags
+[Ashley WHITE(359), Frodo ANDERSON(423), Wulfstan GARCIA(673), Zehir TAYLOR(792)]
+(ID 1036) from album Creatures url(link)
+4 Tags
+[Brianna JACKSON(20), Ylthin SMITH(181), Shadya JONES(294), Ornella WILSON(543)]
+(ID 1041) from album Mountains url(link)
+4 Tags
+[Gandalf THOMAS(325), Frodo HARRIS(640), Grace WHITE(763), Hangvul DAVIS(766)]
+(ID 1044) from album Mountains url(link)
+4 Tags
+[Grace JOHNSON(244), Cyrus MOORE(348), Saruman BROWN(364), Zehir WILLIAMS(750)]
+(ID 1053) from album Battles url(link)
+4 Tags
+[Zehir MOORE(50), Boromir JONES(77), Ylthin HARRIS(525), Arwen WILLIAMS(780)]
+>>>>>>>>>Query5>>>>>>>>>>
+Top 1 matches
+Wulfstan TAYLOR(72) born in 634, Saruman SMITH(114) born in 635
+They are not Fakebook friends and share 1 photos
+[(ID 1436) from album Enemies url(link)]
+>>>>>>>>>Query6>>>>>>>>>>
+Sauron THOMPSON(47) Zehir MOORE(50) are not Fakebook friends and they share 15 friends
+[Isabel TAYLOR(88), Theoden JOHNSON(100), Biara JOHNSON(268), Theoden JOHNSON(358), Elrond MOORE(377), Galadriel WHITE(381), Agrael THOMAS(418), Saruman MOORE(437), Arantir HARRIS(458), Sauron JOHNSON(485), Theoden ANDERSON(532), Ylthin ANDERSON(645), Kujin WILLIAMS(726), Ella JOHNSON(758), Denethor TAYLOR(779)]
+Boromir JOHNSON(338) Kujin MOORE(497) are not Fakebook friends and they share 15 friends
+[Arwen THOMAS(11), Zehir WHITE(73), Arantir MARTIN(78), Shadya JACKSON(96), Brianna THOMPSON(318), Denethor MOORE(397), Freyda ANDERSON(520), Galadriel MOORE(634), Meriadoc DAVIS(674), Sauron JACKSON(690), Zehir HARRIS(700), Gandalf ANDERSON(707), Galadriel ANDERSON(724), Wulfstan WHITE(736), Cyrus BROWN(765)]
+Theoden JOHNSON(100) Gotai MILLER(627) are not Fakebook friends and they share 14 friends
+[Zehir WHITE(73), Velaria BROWN(80), Brianna WHITE(118), Sarah WILSON(167), Kujin MARTINEZ(192), Sauron WHITE(227), Grace JOHNSON(319), Saruman JACKSON(363), Arwen DAVIS(528), Theoden MOORE(592), Gandalf MILLER(677), Ella THOMAS(735), Pippin WILSON(749), Cyrus ANDERSON(791)]
+Ella BROWN(107) Brianna TAYLOR(196) are not Fakebook friends and they share 14 friends
+[Galadriel JONES(29), Arantir MARTIN(78), Ella JACKSON(153), Denethor HARRIS(376), Ella MARTIN(384), Hangvul JACKSON(419), Gimli WILSON(442), Isabel WHITE(573), Grace MOORE(583), Ylthin MOORE(663), Gandalf BROWN(689), Legolas WILSON(693), Zehir HARRIS(700), Grace DAVIS(752)]
+Wulfstan MARTIN(137) Cyrus WILLIAMS(166) are not Fakebook friends and they share 14 friends
+[Elrond TAYLOR(22), Raelag THOMAS(61), Legolas MARTINEZ(120), Zehir WHITE(148), Cyrus GARCIA(221), Eowyn WILLIAMS(282), Galadriel MOORE(297), Boromir BROWN(360), Zehir THOMPSON(385), Galadriel THOMPSON(471), Biara WILLIAMS(488), Gimli ANDERSON(513), Arwen THOMPSON(768), Cyrus MILLER(781)]
+>>>>>>>>>Query7>>>>>>>>>>
+Oldest friend: Agrael JONES(170)
+Youngest friend: Raelag WILSON(452)
+>>>>>>>>>Query8>>>>>>>>>>
+City/Cities with most events: [Bywater]
+Total events in each city: 7
+>>>>>>>>>Query9>>>>>>>>>>
+2 pairs of siblings
+Raelag MOORE(254) and Ornella MOORE(598)
+Shadya THOMPSON(262) and Cyrus THOMPSON(526)
