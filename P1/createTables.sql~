@@ -1,0 +1,136 @@
+CREATE Table Fuser(
+  fuid VARCHAR2(100),
+  first_name VARCHAR2(100) NOT NULL,
+  last_name VARCHAR2(100) NOT NULL,
+  y_birth NUMBER(38),
+  m_birth NUMBER(38),
+  d_birth NUMBER(38),
+  gender VARCHAR2(100),
+  PRIMARY KEY (fuid)
+);
+
+CREATE TABLE Location(
+  lid VARCHAR2(100),
+  city VARCHAR2(100),
+  state VARCHAR2(100),
+  country VARCHAR2(100),
+  PRIMARY KEY (lid)
+);
+
+CREATE TABLE Program(
+  pid VARCHAR2(100),
+  iname VARCHAR2(100),
+  year NUMBER(38),
+  concen CHAR(100),
+  degree VARCHAR2(100),
+  PRIMARY KEY (pid)
+);
+
+CREATE TABLE Friends(
+  fuid_1 VARCHAR2(100),
+  fuid_2 VARCHAR2(100),
+  PRIMARY KEY (fuid_1,fuid_2),
+  FOREIGN KEY (fuid_1) REFERENCES Fuser ON DELETE CASCADE,
+  FOREIGN KEY (fuid_2) REFERENCES Fuser (fuid) ON DELETE CASCADE
+);
+
+CREATE TABLE Hometowns(
+  fuid VARCHAR2(100),
+  lid VARCHAR2(100),
+  PRIMARY KEY (fuid),
+  FOREIGN KEY (fuid) REFERENCES Fuser ON DELETE CASCADE,
+  FOREIGN KEY (lid) REFERENCES Location ON DELETE SET NULL
+);
+
+CREATE TABLE Residents(
+  fuid VARCHAR2(100),
+  lid VARCHAR2(100),
+  PRIMARY KEY (fuid),
+  FOREIGN KEY (fuid) REFERENCES Fuser ON DELETE CASCADE,
+  FOREIGN KEY (lid) REFERENCES Location ON DELETE SET NULL
+);
+
+CREATE TABLE Educates(
+  fuid VARCHAR2(100),
+  pid VARCHAR2(100),
+  PRIMARY KEY (fuid, pid),
+  FOREIGN KEY (fuid) REFERENCES Fuser ON DELETE CASCADE,
+  FOREIGN KEY (pid) REFERENCES Program ON DELETE SET NULL
+);
+
+CREATE TABLE Album_Covers(
+  aid VARCHAR2(100),
+  aname VARCHAR2(100),
+  time_create TIMESTAMP(6),
+  time_modify TIMESTAMP(6),
+  link VARCHAR2(2000),
+  visibility VARCHAR2(100),
+  pid VARCHAR2(100) NOT NULL,
+  PRIMARY KEY (aid)
+);
+
+CREATE TABLE Photo_Belongs(
+  pid VARCHAR2(100),
+  caption VARCHAR2(2000),
+  time_create TIMESTAMP(6),
+  time_modify TIMESTAMP(6),
+  link VARCHAR2(2000),
+  aid VARCHAR2(100) NOT NULL,
+  PRIMARY KEY (pid)
+);
+
+ALTER TABLE Album_Covers ADD FOREIGN KEY (pid) REFERENCES Photo_Belongs INITIALLY DEFERRED DEFERRABLE;
+ALTER TABLE Photo_Belongs ADD FOREIGN KEY (aid) REFERENCES Album_Covers ON DELETE CASCADE INITIALLY DEFERRED DEFERRABLE;
+
+CREATE TABLE Tags(
+  pid VARCHAR2(100),
+  fuid VARCHAR2(100),
+  time_create TIMESTAMP(6),
+  x NUMBER,
+  y NUMBER,
+  PRIMARY KEY (pid, fuid),
+  FOREIGN KEY (pid) REFERENCES Photo_Belongs ON DELETE CASCADE,
+  FOREIGN KEY (fuid) REFERENCES Fuser ON DELETE CASCADE
+);
+
+CREATE TABLE Owns(
+  fuid VARCHAR2(100),
+  aid VARCHAR2(100),
+  PRIMARY KEY (aid),
+  FOREIGN KEY (fuid) REFERENCES Fuser ON DELETE CASCADE,
+  FOREIGN KEY (aid) REFERENCES Album_Covers ON DELETE CASCADE
+);
+
+CREATE TABLE Event_Creates(
+  eid VARCHAR2(100),
+  ename VARCHAR2(100),
+  tagline VARCHAR2(1000),
+  discrip VARCHAR2(4000),
+  host VARCHAR2(100),
+  etype VARCHAR2(100),
+  subtype VARCHAR2(100),
+  time_start TIMESTAMP(6),
+  time_end TIMESTAMP(6),
+  fuid VARCHAR2(100) NOT NULL,
+  PRIMARY KEY (eid),
+  FOREIGN KEY (fuid) REFERENCES Fuser ON DELETE CASCADE
+);
+
+CREATE TABLE Participates(
+  fuid VARCHAR2(100),
+  eid VARCHAR2(100),
+  status VARCHAR2(100),
+  PRIMARY KEY (fuid, eid),
+  FOREIGN KEY (fuid) REFERENCES Fuser ON DELETE CASCADE,
+  FOREIGN KEY (eid) REFERENCES Event_Creates ON DELETE CASCADE
+);
+
+CREATE TABLE Locates(
+  eid VARCHAR2(100),
+  lid VARCHAR2(100),
+  discrip VARCHAR2(200),
+  PRIMARY KEY (eid),
+  FOREIGN KEY (eid) REFERENCES Event_Creates ON DELETE CASCADE,
+  FOREIGN KEY (lid) REFERENCES Location ON DELETE SET NULL
+);
+
