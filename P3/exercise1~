@@ -1,0 +1,429 @@
+// Exercise 1 
+chengfu=> \d+
+                                 List of relations
+ Schema |           Name           |   Type   |  Owner  |    Size    | Description 
+--------+--------------------------+----------+---------+------------+-------------
+ public | categories               | table    | chengfu | 8192 bytes | 
+ public | categories_category_seq  | sequence | chengfu | 8192 bytes | 
+ public | cust_hist                | table    | chengfu | 2616 kB    | 
+ public | customers                | table    | chengfu | 3768 kB    | 
+ public | customers_customerid_seq | sequence | chengfu | 8192 bytes | 
+ public | inventory                | table    | chengfu | 440 kB     | 
+ public | orderlines               | table    | chengfu | 3080 kB    | 
+ public | orders                   | table    | chengfu | 800 kB     | 
+ public | orders_orderid_seq       | sequence | chengfu | 8192 bytes | 
+ public | products                 | table    | chengfu | 840 kB     | 
+ public | products_prod_id_seq     | sequence | chengfu | 8192 bytes | 
+ public | reorder                  | table    | chengfu | 0 bytes    | 
+(12 rows)
+
+// 1(a)
+
+chengfu=> SELECT relname, relkind, reltuples, relpages
+chengfu-> FROM pg_class
+chengfu-> WHERE relname LIKE 'customers%';
+         relname          | relkind | reltuples | relpages 
+--------------------------+---------+-----------+----------
+ customers                | r       |     20000 |      471
+ customers_customerid_seq | S       |         1 |        1
+ customers_pkey           | i       |     20000 |       57
+(3 rows)
+
+// result 
+20000
+
+// 1(b)
+
+
+chengfu=> SELECT relname, relkind, reltuples, relpages
+chengfu-> FROM pg_class
+chengfu-> WHERE relname LIKE 'categories%';
+         relname         | relkind | reltuples | relpages 
+-------------------------+---------+-----------+----------
+ categories              | r       |         0 |        0
+ categories_category_seq | S       |         1 |        1
+ categories_pkey         | i       |         0 |        1
+(3 rows)
+
+chengfu=> SELECT relname, relkind, reltuples, relpages
+chengfu-> FROM pg_class
+chengfu-> WHERE relname LIKE 'categories_category_seq%';
+         relname         | relkind | reltuples | relpages 
+-------------------------+---------+-----------+----------
+ categories_category_seq | S       |         1 |        1
+(1 row)
+
+chengfu=> SELECT relname, relkind, reltuples, relpages
+chengfu-> FROM pg_class
+chengfu-> WHERE relname LIKE 'cust_hist%';
+  relname  | relkind | reltuples | relpages 
+-----------+---------+-----------+----------
+ cust_hist | r       |     60350 |      327
+(1 row)
+
+chengfu=> SELECT relname, relkind, reltuples, relpages
+chengfu-> FROM pg_class
+chengfu-> WHERE relname LIKE 'customers%';
+         relname          | relkind | reltuples | relpages 
+--------------------------+---------+-----------+----------
+ customers                | r       |     20000 |      471
+ customers_customerid_seq | S       |         1 |        1
+ customers_pkey           | i       |     20000 |       57
+(3 rows)
+
+chengfu=> SELECT relname, relkind, reltuples, relpages
+chengfu-> FROM pg_class
+chengfu-> WHERE relname LIKE 'customers_customerid_seq%';
+         relname          | relkind | reltuples | relpages 
+--------------------------+---------+-----------+----------
+ customers_customerid_seq | S       |         1 |        1
+(1 row)
+
+chengfu=> SELECT relname, relkind, reltuples, relpages
+chengfu-> FROM pg_class
+chengfu-> WHERE relname LIKE 'inventory%';
+    relname     | relkind | reltuples | relpages 
+----------------+---------+-----------+----------
+ inventory      | r       |     10000 |       55
+ inventory_pkey | i       |     10000 |       30
+(2 rows)
+
+chengfu=> SELECT relname, relkind, reltuples, relpages
+chengfu-> FROM pg_class
+chengfu-> WHERE relname LIKE 'orderlines%';
+  relname   | relkind | reltuples | relpages 
+------------+---------+-----------+----------
+ orderlines | r       |     60350 |      385
+(1 row)
+
+chengfu=> SELECT relname, relkind, reltuples, relpages
+chengfu-> FROM pg_class
+chengfu-> WHERE relname LIKE 'orders%';
+      relname       | relkind | reltuples | relpages 
+--------------------+---------+-----------+----------
+ orders             | r       |     12000 |      100
+ orders_orderid_seq | S       |         1 |        1
+ orders_pkey        | i       |     12000 |       35
+(3 rows)
+
+chengfu=> SELECT relname, relkind, reltuples, relpages
+chengfu-> FROM pg_class
+chengfu-> WHERE relname LIKE 'orders_orderid_seq%';
+      relname       | relkind | reltuples | relpages 
+--------------------+---------+-----------+----------
+ orders_orderid_seq | S       |         1 |        1
+(1 row)
+
+chengfu=> SELECT relname, relkind, reltuples, relpages
+chengfu-> FROM pg_class
+chengfu-> WHERE relname LIKE 'products%';
+       relname        | relkind | reltuples | relpages 
+----------------------+---------+-----------+----------
+ products             | r       |     10000 |      105
+ products_pkey        | i       |     10000 |       30
+ products_prod_id_seq | S       |         1 |        1
+(3 rows)
+
+chengfu=> SELECT relname, relkind, reltuples, relpages
+chengfu-> FROM pg_class
+chengfu-> WHERE relname LIKE 'products_prod_id_seq%';
+       relname        | relkind | reltuples | relpages 
+----------------------+---------+-----------+----------
+ products_prod_id_seq | S       |         1 |        1
+(1 row)
+
+chengfu=> SELECT relname, relkind, reltuples, relpages
+chengfu-> FROM pg_class
+chengfu-> WHERE relname LIKE 'reorder%';
+ relname | relkind | reltuples | relpages 
+---------+---------+-----------+----------
+ reorder | r       |         0 |        0
+(1 row)
+
+//result: 
+
+cust_hist  | r       |     60350 |      327
+customers  | r       |     20000 |      471
+inventory  | r       |     10000 |       55
+orderlines | r       |     60350 |      385
+orders     | r       |     12000 |      100
+products   | r       |     10000 |      105
+
+
+categories_pkey | i       |         0 |        1
+customers_pkey  | i       |     20000 |       57
+inventory_pkey  | i       |     10000 |       30
+orders_pkey     | i       |     12000 |       35
+products_pkey   | i       |     10000 |       30
+
+relation: customers(471), orderlines(385)
+index: customers_pkey(57), orders_pkey(35)
+
+
+// 1 (c)
+
+SELECT attname, n_distinct
+FROM pg_stats
+WHERE tablename = 'customers';
+
+       attname        | n_distinct 
+----------------------+------------
+ customerid           |         -1
+ firstname            |         -1
+ lastname             |         -1
+ address1             |         -1
+ address2             |          1
+ city                 |         -1
+ state                |         52
+ zip                  |     -0.475
+ country              |         11
+ region               |          2
+ email                |         -1
+ phone                |         -1
+ creditcardtype       |          5
+ creditcard           |         -1
+ creditcardexpiration |         60
+ username             |         -1
+ password             |          1
+ age                  |         73
+ income               |          5
+ gender               |          2
+
+username & email are suitable for building a B-tree because these two attributes are range-style and public data.
+
+
+// d
+select count(*)
+FROM (SELECT DISTINCT age FROM Customers) t;
+
+positive number is the distinct data number.
+negative number is the -(distinct data number)/(total number 20000)
+
+// Exercise 2
+// 2(a)
+
+
+// 2(b)
+chengfu=> EXPLAIN select * from customers where country = 'Japan';
+                          QUERY PLAN                           
+---------------------------------------------------------------
+ Seq Scan on customers  (cost=0.00..721.00 rows=995 width=156)
+   Filter: ((country)::text = 'Japan'::text)
+(2 rows)
+
+compute time and list formula
+
+// 2(c)
+draw query tree
+
+
+// Exercise 3
+// 3(a)
+chengfu=> SELECT relname, relkind, reltuples, relpages
+FROM pg_class
+WHERE relname LIKE 'customers%';
+         relname          | relkind | reltuples | relpages 
+--------------------------+---------+-----------+----------
+ customers_customerid_seq | S       |         1 |        1
+ customers                | r       |     20000 |      471
+ customers_pkey           | i       |     20000 |       57
+ customers_country        | i       |     20000 |       59
+(4 rows)
+
+59
+
+// 3(b)
+chengfu=> EXPLAIN select * from customers where country = 'Japan';
+                                    QUERY PLAN                                     
+-----------------------------------------------------------------------------------
+ Bitmap Heap Scan on customers  (cost=19.96..503.40 rows=995 width=156)
+   Recheck Cond: ((country)::text = 'Japan'::text)
+   ->  Bitmap Index Scan on customers_country  (cost=0.00..19.71 rows=995 width=0)
+         Index Cond: ((country)::text = 'Japan'::text)
+(4 rows)
+Bitmap
+503.40
+
+
+// 3(c)
+the customers_country is not clustered, so the sequential accesses might read in different pages. It waste a lot of loading time.
+
+
+// 3(d0
+chengfu=> EXPLAIN select * from customers where country = 'Japan';
+                                       QUERY PLAN                                       
+----------------------------------------------------------------------------------------
+ Index Scan using customers_country on customers  (cost=0.00..56.66 rows=995 width=156)
+   Index Cond: ((country)::text = 'Japan'::text)
+(2 rows)
+
+Index Scan with cost 56.66
+the best method is index scan
+
+
+// 3(e)
+clustered index is sort by the order of customers data which is more efficient. The sequential accesses in Bitmap method might read in different pages which waste a lot of resource.
+
+
+
+
+// Exercise 4
+// 4(a)
+chengfu=> EXPLAIN SELECT totalamount
+chengfu-> FROM Customers C, Orders O
+chengfu-> WHERE C.customerid = O.customerid AND C.country = 'Japan';
+                                QUERY PLAN                                 
+---------------------------------------------------------------------------
+ Hash Join  (cost=733.44..1004.41 rows=597 width=8)
+   Hash Cond: (o.customerid = c.customerid)
+   ->  Seq Scan on orders o  (cost=0.00..220.00 rows=12000 width=12)
+   ->  Hash  (cost=721.00..721.00 rows=995 width=4)
+         ->  Seq Scan on customers c  (cost=0.00..721.00 rows=995 width=4)
+               Filter: ((country)::text = 'Japan'::text)
+(6 rows)
+
+draw query tree
+
+
+// 4(b)
+hash join
+1004.41
+Seq Scan on customers c
+
+// 4(c)
+chengfu=> set enable_hashjoin = off;
+SET
+chengfu=> EXPLAIN SELECT totalamount
+FROM Customers C, Orders O
+WHERE C.customerid = O.customerid AND C.country = 'Japan';
+                                QUERY PLAN                                 
+---------------------------------------------------------------------------
+ Merge Join  (cost=1803.59..1874.53 rows=597 width=8)
+   Merge Cond: (c.customerid = o.customerid)
+   ->  Sort  (cost=770.54..773.03 rows=995 width=4)
+         Sort Key: c.customerid
+         ->  Seq Scan on customers c  (cost=0.00..721.00 rows=995 width=4)
+               Filter: ((country)::text = 'Japan'::text)
+   ->  Sort  (cost=1033.04..1063.04 rows=12000 width=12)
+         Sort Key: o.customerid
+         ->  Seq Scan on orders o  (cost=0.00..220.00 rows=12000 width=12)
+(9 rows)
+
+merge Join
+1874.53
+draw query tree
+
+// 4(d)
+chengfu=> set enable_mergejoin = off;
+SET
+chengfu=> EXPLAIN SELECT totalamount
+FROM Customers C, Orders O
+WHERE C.customerid = O.customerid AND C.country = 'Japan';
+                                       QUERY PLAN                                       
+----------------------------------------------------------------------------------------
+ Nested Loop  (cost=0.00..5749.36 rows=597 width=8)
+   ->  Seq Scan on orders o  (cost=0.00..220.00 rows=12000 width=12)
+   ->  Index Scan using customers_pkey on customers c  (cost=0.00..0.45 rows=1 width=4)
+         Index Cond: (c.customerid = o.customerid)
+         Filter: ((c.country)::text = 'Japan'::text)
+(5 rows)
+
+nested loop
+5749.36
+
+// Exercise 5
+// 5(a)
+chengfu=> EXPLAIN SELECT AVG(totalamount) as avgOrder, country
+chengfu-> FROM Customers C, Orders O
+chengfu-> WHERE C.customerid = O.customerid
+chengfu-> GROUP BY country
+chengfu-> ORDER BY avgOrder;
+                                       QUERY PLAN                                        
+-----------------------------------------------------------------------------------------
+ Sort  (cost=1501.33..1501.36 rows=11 width=13)
+   Sort Key: (avg(o.totalamount))
+   ->  HashAggregate  (cost=1501.00..1501.14 rows=11 width=13)
+         ->  Hash Join  (cost=921.00..1441.00 rows=12000 width=13)
+               Hash Cond: (o.customerid = c.customerid)
+               ->  Seq Scan on orders o  (cost=0.00..220.00 rows=12000 width=12)
+               ->  Hash  (cost=671.00..671.00 rows=20000 width=9)
+                     ->  Seq Scan on customers c  (cost=0.00..671.00 rows=20000 width=9)
+(8 rows)
+
+chengfu=> set enable_hashjoin = off;
+SET
+chengfu=> EXPLAIN SELECT AVG(totalamount) as avgOrder, country
+FROM Customers C, Orders O
+WHERE C.customerid = O.customerid
+GROUP BY country
+ORDER BY avgOrder;
+                                                QUERY PLAN                                                 
+-----------------------------------------------------------------------------------------------------------
+ Sort  (cost=2325.52..2325.55 rows=11 width=13)
+   Sort Key: (avg(o.totalamount))
+   ->  HashAggregate  (cost=2325.19..2325.33 rows=11 width=13)
+         ->  Merge Join  (cost=1033.15..2265.19 rows=12000 width=13)
+               Merge Cond: (c.customerid = o.customerid)
+               ->  Index Scan using customers_pkey on customers c  (cost=0.00..1002.25 rows=20000 width=9)
+               ->  Sort  (cost=1033.04..1063.04 rows=12000 width=12)
+                     Sort Key: o.customerid
+                     ->  Seq Scan on orders o  (cost=0.00..220.00 rows=12000 width=12)
+(9 rows)
+
+
+
+hash join
+1501.36
+
+merge join
+2325.55
+
+// 5(b)
+chengfu=> EXPLAIN SELECT *
+chengfu-> FROM Customers C, Orders O
+chengfu-> WHERE C.customerid = O.customerid
+chengfu-> ORDER BY C.customerid;
+                                           QUERY PLAN                                            
+-------------------------------------------------------------------------------------------------
+ Merge Join  (cost=1033.15..2265.19 rows=12000 width=192)
+   Merge Cond: (c.customerid = o.customerid)
+   ->  Index Scan using customers_pkey on customers c  (cost=0.00..1002.25 rows=20000 width=156)
+   ->  Sort  (cost=1033.04..1063.04 rows=12000 width=36)
+         Sort Key: o.customerid
+         ->  Seq Scan on orders o  (cost=0.00..220.00 rows=12000 width=36)
+(6 rows)
+
+chengfu=> set enable_mergejoin = off;
+SET
+chengfu=> EXPLAIN SELECT *
+FROM Customers C, Orders O
+WHERE C.customerid = O.customerid
+ORDER BY C.customerid;
+                                   QUERY PLAN                                    
+---------------------------------------------------------------------------------
+ Sort  (cost=3783.54..3813.54 rows=12000 width=192)
+   Sort Key: c.customerid
+   ->  Hash Join  (cost=370.00..1861.00 rows=12000 width=192)
+         Hash Cond: (c.customerid = o.customerid)
+         ->  Seq Scan on customers c  (cost=0.00..671.00 rows=20000 width=156)
+         ->  Hash  (cost=220.00..220.00 rows=12000 width=36)
+               ->  Seq Scan on orders o  (cost=0.00..220.00 rows=12000 width=36)
+(7 rows)
+
+
+merge join
+2265.19
+
+hash join
+3813.54
+
+
+// 5(c)
+why use different join in 5.1 &5.2?
+
+
+
+
+
+
+
